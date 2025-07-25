@@ -18,3 +18,7 @@ class URLAlreadyExistsError(Exception):
 
 class InvalidURLError(Exception):
     """Raised when a supplied URL fails validation."""
+
+
+class URLAlreadyShortenedError(Exception):
+    """Raised when a supplied URL already shortened."""

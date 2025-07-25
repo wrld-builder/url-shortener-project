@@ -2,3 +2,5 @@
 # If you decide to extend the server using a framework like Flask or FastAPI,
 # list those dependencies here, e.g.:
 # Flask==2.2.5
+
+pytest==8.4.1
