@@ -1,0 +1,67 @@
+# ===== Python core =====
+# Byte‑compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ===== Testing =====
+.pytest_cache/
+nosetests.xml
+coverage.xml
+htmlcov/
+
+# ===== Logs & reports =====
+*.log
+*.csv
+*.dat
+*.out
+*.prof
+
+# ===== IDE: PyCharm =====
+# Directory based project format
+.idea/
+
+# Module files
+*.iml
+
+# Workspace files (local history, tasks)
+workspace.xml
+tasks.xml
+usage.statistics.xml
+shelf/
+
+# ===== Environment variables =====
+.env
+*.env
+.env.*
+
+# ===== OS‑specific =====
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===== Optional: Database files =====
+*.sqlite3
+
+# ===== Optional: Editor backups =====
+*~
+*.swp
+*.swo
+
+# ===== Custom patterns =====
+# добавьте здесь свои временные папки, логи или файлы настроек
