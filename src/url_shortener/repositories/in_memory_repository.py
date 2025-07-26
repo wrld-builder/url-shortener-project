@@ -49,6 +49,11 @@ class InMemoryShortURLRepository(AbstractShortURLRepository):
         self._storage[short_url.short_code] = short_url
         self._url_index[short_url.original_url] = short_url
 
+    def clear(self) -> None:
+        """Очистить все записи (для удобства запуска тестов)."""
+
+        self._storage.clear()
+
     def get_by_code(self, code: str) -> Optional[ShortURL]:
         return self._storage.get(code)
 

@@ -11,11 +11,9 @@ directly manipulating repositories or domain objects.
 
 from __future__ import annotations
 
-from typing import Optional
-
 from ..domain.models import ShortURL
 from ..domain.value_objects import URL
-from ..exceptions import InvalidURLError, ShortURLNotFoundError, URLAlreadyExistsError
+from ..exceptions import URLAlreadyShortenedError, InvalidURLError
 from ..repositories import AbstractShortURLRepository
 from .code_generator import AbstractCodeGenerator
 
@@ -51,7 +49,7 @@ class ShortenerService:
         existing = self._repository.get_by_original(str(url_vo))
         if existing:
             # To emphasise immutability of URL value objects we return the existing entity
-            raise URLAlreadyExistsError(
+            raise URLAlreadyShortenedError(
                 f"The URL '{url_vo}' has already been shortened with code '{existing.short_code}'."
             )
 
@@ -80,7 +78,7 @@ class ShortenerService:
         """
         entity = self._repository.get_by_code(code)
         if not entity:
-            raise ShortURLNotFoundError(f"No URL mapping found for code '{code}'")
+            raise URLAlreadyShortenedError(f"No URL mapping found for code '{code}'")
         # business rule: update hit count on each access
         entity.increment_hits()
         return entity

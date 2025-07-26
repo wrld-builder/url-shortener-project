@@ -18,6 +18,5 @@ def test_shorten_and_resolve(service):
     assert resolved.hits == 1
 
 def test_duplicate_shortening(service):
-    service.shorten_url("https://openai.com")
     with pytest.raises(URLAlreadyShortenedError):
         service.shorten_url("https://openai.com")

@@ -38,9 +38,9 @@ class ShortURL:
             accessed via the service.
     """
 
-    id: int
     original_url: str
     short_code: str
+    id: Optional[int] = None
     created_at: datetime = field(default_factory=lambda: datetime.utcnow())
     expires_at: Optional[datetime] = None
     hits: int = 0
